@@ -1,11 +1,75 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tugas</title>
-</head>
-<body>
-    
-</body>
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <style>
+        body{
+            font-size: 15px;
+            background-color: rgb(252, 248, 248);
+            }
+        
+        h1{
+            font-size: 30px;
+        }
+        
+        .container{
+            width: 850px;
+            margin: 20px 250px 20px 250px;
+            border: 6px solid rgb(0, 0, 0);
+        }
+    </style>
+
+    <title>Jasa Pengiriman</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="form-group">
+                <h1><center><b>PENGIRIMAN BARANG</center></b></h1>
+                <br>
+            <label for="namapengirim">Nama Pengirim</label>
+            <input type="text" class="form-control" id="nama">
+
+            <label for="namapenerima">Nama Penerima</label>
+            <input type="text" class="form-control" id="penerima">
+
+            <label for="tanggal">Tanggal</label>
+            <input type="date" class="form-control" id="tanggal">
+
+            <label for="alamat">Alamat</label>
+            <textarea class="form-control" id="alamat"></textarea>
+
+            <label for="namabarang">Nama barang</label>
+            <input type="text" class="form-control" id="namabarang">
+
+            <label for="tipebarang">Tipe Barang</label>
+            <select class="form-control" id="txt_tipe">
+                <option>Elektronik</option>
+                <option>Farmasi</option>
+                <option>Food</option>
+                <option>Kosmetik</option>
+            </select>
+
+            <label for="ongkoskirim">Ongkos Kirim</label>
+            <input type="number" class="form-control" id="ongkir" placeholder="Per Kilometer">
+
+            <label for="gambar">Masukan Gambar</label>
+            <input type="link" class="form-control" id="img" placeholder="Silahkan Masukan Gambar">
+
+            <button class="btn btn-primary m-2" onclick="add()">Simpan</button>
+            </div>
+        </div> 
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </body>
 </html>
