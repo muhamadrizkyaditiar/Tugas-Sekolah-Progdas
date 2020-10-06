@@ -27,7 +27,6 @@
     </head>
     <body>
 
-        <!-- navbar-nya -->
         <nav style="height: 1px; padding: 1rem 2rem;" class="fixed-top"> 
             <div class="Mynavbar"> 
         <nav class="navbar navbar-expand-lg  bg-transparent  navbar-light" style="height: 15px;">
@@ -52,7 +51,7 @@
                 <div class="col" style="display: flex;text-align: center;">
                     <div class="card">
                         <img src="https://cf.shopee.co.id/file/c433281f6fd72a8dfe4a79f02e019da0"
-                            class="card-img-top" alt="ini gambar." width="50%">
+                            class="card-img-top" alt="" width="50%">
                         <div class="card-body">
                             <h5 class="card-title">Paket REGULER</h5>
                             <p class="card-text">Rp 10.000</p>
@@ -62,7 +61,7 @@
                 <div class="col" style="display: flex;text-align: center;">
                     <div class="card">
                         <img src="https://cf.shopee.co.id/file/deaa870c9fd5df63402ea781f8f27b55"
-                            class="card-img-top" alt="..." width="50%" height="350px">
+                            class="card-img-top" alt="" width="50%" height="350px">
                         <div class="card-body">
                             <h5 class="card-title">Paket YES</h5>
                             <p class="card-text">Rp 25.000</p>
@@ -72,7 +71,7 @@
                 <div class="col" style="display: flex;text-align: center;">
                     <div class="card">
                         <img src="https://cf.shopee.co.id/file/9fcbdce0feed2681ccc4180005c8ae01"
-                            class="card-img-top" alt="ini gambar." width="50%">
+                            class="card-img-top" alt="" width="50%">
                         <div class="card-body">
                             <h5 class="card-title">Paket EXPRESS</h5>
                             <p class="card-text">Rp 32.000</p>
@@ -80,15 +79,15 @@
                     </div>
                 </div>
             </div>
-
-        <div class="p-3 mb-2 bg-transparent text-dark" role="alert" style="text-align: center; margin-top: 80px;" id="form"></div>
     
-        <!-- Form Input ! -->
-    <div class="col-sm">
-        <div class="card text-white" style="margin-right: 130px; margin-left: 130px;">
-            <h5 class="card-header bg-dark">Form Input</h5>
-            <div class="card-body">
-                <table class="table table-borderless">
+        <!-- Form Input! -->
+        <div class="p-3 mb-2 bg-transparent text-dark" role="alert" style="text-align: center; margin-top: 80px;" id="form"></div>
+        <form name="forminput">    
+            <div class="col-sm">
+                <div class="card text-white" style="margin-right: 130px; margin-left: 130px;">
+                <h5 class="card-header bg-dark">Form Input</h5>
+                <div class="card-body">
+                    <table class="table table-borderless">
 
                     <tr>
                         <td>Nama Pengirim:</td>
@@ -109,14 +108,14 @@
 
                     <tr>
                         <td>Alamat:</td>
-                        <td><textarea class="form-control" id="txt_alamat" name="alamat" ></textarea>
+                        <td><textarea class="form-control" id="txt_alamat" name="alamat"></textarea>
                         </td>
                     </tr>
 
                     <tr>
                         <td>Paket Pengiriman:</td>
                         <td>
-                            <select name="inputkodepaket" class="form-control" id="txt_tipe" onclick="paket()">
+                            <select name="inputkodepaket" class="form-control" id="txt_kirim" onclick="paket()">
                                 <option value=""></option>
                                 <option value="no1">Reguler</option>
                                 <option value="no2">Yes</option>
@@ -127,18 +126,17 @@
 
                     <tr>
                         <td>Ongkos Pengiriman:</td>
-                        <td><textarea class="form-control" id="number" name="ongkos" id="txt_ongkir"></textarea>
+                        <td><input class="form-control" type="number" name="ongkir">
                         </td>
                     </tr>
 
                     <td colspan="2">
-                        <input type="button" class="form-control btn-outline-dark" value="Total"
-                            onclick="hitungtotal()">
+                        <input type="button" class="form-control btn-outline-dark" value="Total" onclick="hitungtotal()">
                     </td>
 
                     <tr>
                         <td>Total:</td>
-                        <td><input class="form-control" type="text" name="inputtotal"></td>
+                        <td><input class="form-control" type="text" name="inputtotal" id="txt_total"></td>
                     </tr>
 
                     <tr>
@@ -162,26 +160,23 @@
                             <div class="row">
                                 <div class="col-sm">
                                     <input class="form-control btn-outline-dark" type="button"
-                                        value="submit" onclick="add()"><br>
+                                        value="Simpan" onclick="add()"><br>
                                 </div>
                                 <div class="col-sm">
-                                    <input class="form-control btn-outline-dark" type="reset"
-                                        value="hapus">
+                                    <input class="form-control btn-outline-dark" type="reset" value="hapus">
                                 </div>
                             </div>
                         </td>
                     </tr>
                 </table>
-            </div>
+                </div>
+                </div>
         </div>
-    </div>
+        </form>
     
             <!--table-->
             <div class="p-3 mb-2 bg-transparent text-dark" role="alert" style="text-align: center; margin-top: 45px;" id="history"></div>
-            <center><h1><b>HISTORY PENGIRIMAN</b></h1>
-            <br>
-            <div class="underline-title"></div>
-            <br>
+            <center><h1><b>HISTORY PENGIRIMAN</b></h1><br>
             <table border="1" cellpadding="5" style="text-align: center; width: 1100px; color: #ffffff;">
                 <thead class="table-dark">
                 <tr>
@@ -190,7 +185,7 @@
                     <th scope="col">Penerima</th>
                     <th scope="col">Tanggal</th>
                     <th scope="col">Alamat</th>
-                    <th scope="col">Tipe</th>
+                    <th scope="col">Paket</th>
                     <th scope="col">Ongkos Kirim</th>
                 </tr>
                 </thead>
@@ -210,12 +205,33 @@
             <h5 class="card-title text-white bg-dark border-dark">Hubungi</h5>
             <ul>
             <li><a class="" href=""><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/1200px-Instagram_logo_2016.svg.png" width="20" height="20" alt=""> Instagram</a></li>
-            <li><a class="" href=""><img src="https://cdn-2.tstatic.net/surabaya/foto/bank/images/whatsapp-wa-diblokir-error-lagi-hari-jumat-14-juni-2019-berikut-penjelasan-kominfo.jpg" width="20" height="20" alt="" class="gambar rounded">  WhatsApp</a></li>
+            <li><a class="" href=""><img src="https://cdn-2.tstatic.net/surabaya/foto/bank/images/whatsapp-wa-diblokir-error-lagi-hari-jumat-14-juni-2019-berikut-penjelasan-kominfo.jpg" width="20" height="20" alt="">  WhatsApp</a></li>
             </ul>
             <div class="card-footer text-white bg-dark border-dark"> <h5>Copyright © 2015 JNE. All Rights Reserved.</h5></div>
         </div>
         </div>
 </footer>
+
+    <script>
+
+            function paket() {
+            var ongkirnya = (document.forminput.inputkodepaket.value);
+            var ongkosongkir = "";
+
+            if (ongkirnya == "no1") {
+                ongkosongkir = 10000;
+            } else if (ongkirnya == "no2") {
+                ongkosongkir = 25000;
+            } else if (ongkirnya == "no3") {
+                ongkosongkir = 32000;
+            } else {
+                ongkosongkir = "";
+            }
+
+            document.forminput.ongkir.value = ongkosongkir;
+        }
+
+    </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
