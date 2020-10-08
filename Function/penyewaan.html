@@ -45,15 +45,15 @@
 
         <div class="p-3 mb-2 bg-transparent text-dark" role="alert" style="text-align: center; margin-top: 15px;" id="home"></div>
         <div class="container mt-5">
-            <h5 class="container-fluid fontbaru p-2 mb-3"
-                style="background-color:#000000; color: #ffffff; text-align: center;"><b>Paket Pengiriman</b></h5>
+            <h5 class="container-fluid fontbaru p-2 mb-3" style="background-color:#000000; color: #ffffff; text-align: center;"><b>Paket Pengiriman</b></h5>
             <div class="row">
                 <div class="col" style="display: flex;text-align: center;">
                     <div class="card">
                         <img src="https://cf.shopee.co.id/file/c433281f6fd72a8dfe4a79f02e019da0"
                             class="card-img-top" alt="" width="50%">
                         <div class="card-body">
-                            <h5 class="card-title">Paket Reguler</h5>
+                            <h3 class="card-title">Paket Reguler</h3>
+                            <p class="card-text">Estimasi waktu penyampaian kiriman adalah 4-6 hari</p>
                             <p class="card-text"><del>Rp. 10.000</del></p>
                             <p class="card-text">Rp. 9500</p>
 
@@ -61,11 +61,12 @@
                     </div>
                 </div>
                 <div class="col" style="display: flex;text-align: center;">
-                    <div class="card" style="margin-left: 18px;">
+                    <div class="card">
                         <img src="https://cf.shopee.co.id/file/deaa870c9fd5df63402ea781f8f27b55"
                             class="card-img-top" alt="" width="50%" height="350px">
                         <div class="card-body">
-                            <h5 class="card-title">Paket Yes</h5>
+                            <h3 class="card-title">Paket Yes</h3>
+                            <p class="card-text">Estimasi waktu penyampaian kiriman adalah 3 hari</p>
                             <p class="card-text"><del>Rp. 25.000</del></p>
                             <p class="card-text">Rp. 23750</p>
                         </div>
@@ -76,7 +77,8 @@
                         <img src="https://cf.shopee.co.id/file/9fcbdce0feed2681ccc4180005c8ae01"
                             class="card-img-top" alt="" width="50%">
                         <div class="card-body">
-                            <h5 class="card-title">Paket Express</h5>
+                            <h3 class="card-title">Paket Express</h3>
+                            <p class="card-text">Estimasi waktu penyampaian kiriman adalah 1 hari</p>
                             <p class="card-text"><del>Rp. 32.000</del></p>
                             <p class="card-text">Rp. 30400</p>
                         </div>
@@ -100,12 +102,12 @@
 
                     <tr>
                         <td>Nama Pengirim:</td>
-                        <td><input class="form-control" type="text" name="inputpengirim" id="txt_nama" placeholder="Silahkan Masukan Nama"></td>
+                        <td><input class="form-control" type="text" name="inputpengirim" id="txt_nama"></td>
                     </tr>
 
                     <tr>
                         <td>Nama Penerima:</td>
-                        <td><input class="form-control" type="text" name="inputpenerima" id="txt_penerima" placeholder="Silahkan Masukan Nama">
+                        <td><input class="form-control" type="text" name="inputpenerima" id="txt_penerima">
                         </td>
                     </tr>
 
@@ -139,29 +141,13 @@
                         </td>
                     </tr>
 
-                    <tr>
-                        <td>Total:</td>
-                        <td><input class="form-control" type="text" name="inputtotal" id="txt_total"></td>
-                    </tr>
-
                     <td colspan="1">
                         <input type="button" class="form-control btn-outline-dark" value="Total" onclick="stotal()">
                     </td>
 
                     <tr>
-                        <td>Bayar:</td>
-                        <td><input class="form-control" type="text" name="txt_bayar"></td>
-                    </tr>
-
-                    <td colspan="1">
-                        <input class="form-control btn-outline-dark" type="button" value="Bayar"
-                            onclick="skembalian()">
-                    </td>
-
-                    <tr>
-                        <td><label>Kembalian:</label></td>
-                        <td><input class="form-control" type="text" name="kembalian">
-                        </td>
+                        <td>Total:</td>
+                        <td><input class="form-control" type="text" name="inputtotal" id="txt_total"></td>
                     </tr>
 
                     <tr>
@@ -185,7 +171,7 @@
             <!--table-->
             <div class="p-3 mb-2 bg-transparent text-dark" role="alert" style="text-align: center; margin-top: 45px;" id="history"></div>
             <center><h1><b>Data Pengiriman</b></h1><br>
-            <table border="1" cellpadding="5" style="text-align: center; width: 1080px; color: #000000;">
+            <table border="1" cellpadding="5" style="text-align: center; width: 1120px; color: #000000;">
                 <thead class="table-dark">
                 <tr>
                     <th scope="col">No</th>
@@ -260,16 +246,6 @@
             document.forminput.inputtotal.value = eval(total);
         }
 
-        function skembalian() {
-            var total = (document.forminput.inputtotal.value);
-            var bayar = (document.forminput.txt_bayar.value);
-            var kembalian = 0.0;
-
-            kembalian = bayar - total;
-
-            document.forminput.kembalian.value = eval(kembalian);
-        }
-
          // data array
             var resi = []
             var pengirim = []
@@ -298,8 +274,8 @@
                     "<td>"+paketkirim[i]+"</td>"+
                     "<td>"+ongkoskirim[i]+"</td>"+
                     "<td>"+
-                        "<button class='btn btn-primary mr-2'  onclick='edit("+i+")'>Edit</button>"+
-                        "<button class='btn btn-danger mr-2'   onclick='remove("+i+")'>Hapus</button>"+
+                        "<button class='btn btn-primary mr-1'  onclick='edit("+i+")'>Edit</button>"+
+                        "<button class='btn btn-danger mr-1'   onclick='remove("+i+")'>Hapus</button>"+
                     "</td>"+
                     "</tr>"
                     }
@@ -344,7 +320,7 @@
                 paketkirim[id] = editkirim
                 ongkoskirim[id] = editotal
 
-                 //tampilan data lagi
+                //tampilan data lagi
                 show()
                 
             }
